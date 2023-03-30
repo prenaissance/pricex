@@ -16,7 +16,7 @@ const crawler = new JSDOMCrawler({
   maxRequestsPerCrawl: 3,
 });
 
-await crawler.router.addHandler("home", async ({ enqueueLinks, log }) => {
+crawler.router.addHandler("home", async ({ enqueueLinks, log }) => {
   log.info(`enqueueing home page navigation URLs on ${baseUrl}`);
   await enqueueLinks({
     globs: ["https://shopit.md/ro/catalog/*"],

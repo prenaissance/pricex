@@ -1,3 +1,4 @@
 import shopitCrawler from "./crawlers/shopit";
+import enterCrawler from "./crawlers/enter";
 
-console.log(await shopitCrawler.run());
+await enterCrawler.run();

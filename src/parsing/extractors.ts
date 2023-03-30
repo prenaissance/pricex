@@ -1,7 +1,7 @@
 import { decimalPrice } from "./regex";
 
 export const getDecimalPrice = (text: string) => {
-  const match = text.match(decimalPrice);
+  const match = text.replace(/\s/g, "").match(decimalPrice);
   if (!match) {
     return null;
   }
@@ -11,3 +11,6 @@ export const getDecimalPrice = (text: string) => {
   }
   return parsed;
 };
+
+export const normalizeString = (text: string) =>
+  text.trim().replace(/[\n\t]/g, "");
