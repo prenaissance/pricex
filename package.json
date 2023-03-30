@@ -1,0 +1,33 @@
+{
+    "name": "pricex",
+    "version": "0.0.1",
+    "type": "module",
+    "description": "",
+    "dependencies": {
+        "crawlee": "^3.0.0"
+    },
+    "devDependencies": {
+        "@apify/tsconfig": "^0.1.0",
+        "@types/node": "^18.15.10",
+        "@typescript-eslint/eslint-plugin": "^5.57.0",
+        "@typescript-eslint/parser": "^5.57.0",
+        "eslint": "^8.37.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-import-resolver-typescript": "^3.5.4",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "pnpm": "^8.1.0",
+        "prettier": "^2.8.7",
+        "tsx": "^3.12.6",
+        "typescript": "^5.0.0"
+    },
+    "scripts": {
+        "start": "pnpm run start:dev",
+        "start:prod": "node dist/main.js",
+        "start:dev": "tsx src/main.ts",
+        "build": "tsc",
+        "test": "echo \"Error: oops, the actor has no tests yet, sad!\" && exit 1"
+    },
+    "author": "prenaissance",
+    "license": "ISC"
+}
