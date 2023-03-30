@@ -1,6 +1,6 @@
 import { JSDOMCrawler, RequestList, RequestQueue, Dataset } from "crawlee";
-import ProductInfo from "../../data/schemas/product-info";
-import { getDecimalPrice } from "../../parsing/extractors";
+import ProductInfo from "@/data/schemas/product-info";
+import { getDecimalPrice } from "../parsing/extractors";
 export const name = "shopit";
 export const baseUrl = "https://shopit.md";
 const requestList = await RequestList.open(name, [
