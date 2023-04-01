@@ -1,5 +1,6 @@
 import shopitCrawler from "./crawlers/shopit";
 import enterCrawler from "./crawlers/enter";
 import xstoreCrawler from "./crawlers/xstore";
+import cosmoCrawler from "./crawlers/cosmo";
 
-await xstoreCrawler.run();
+await cosmoCrawler.run();
