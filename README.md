@@ -1,27 +1,59 @@
-# Crawlee + CheerioCrawler + TypeScript project
+# PriceX price aggregation
 
-This template is a production ready boilerplate for developing with `CheerioCrawler`. Use this to bootstrap your projects using the most up-to-date code.
+PriceX is a price aggregation service that collects prices from multiple e-commerce stores through web scraping and processes the data to provide an accurate price comparison.
 
-If you're looking for examples or want to learn more visit:
+## Provisioning
 
-- [Tutorial](https://crawlee.dev/docs/guides/cheerio-crawler-guide)
-- [Documentation](https://crawlee.dev/api/cheerio-crawler/class/CheerioCrawler)
-- [Examples](https://crawlee.dev/docs/examples/cheerio-crawler)
+If the project will grow to a very complex scale, an Azure ARM template could be use for IaS. For now, the steps to be run in the Azure CLI are described here.
 
-## Writing a README
+### Prerequisites
 
-See our tutorial on [writing READMEs for your actors](https://help.apify.com/en/articles/2912548-how-to-write-great-readme-for-your-actors) if you need more inspiration.
+- Azure subscription
+- Azure CLI installed (or cloud shell)
 
-### Table of contents
+### Steps
 
-If your README requires a table of contents, use the template below and make sure to keep the `<!-- toc start -->` and `<!-- toc end -->` markers.
+1. Setup some env variables:
 
-<!-- toc start -->
-- Introduction
-- Use Cases
-    - Case 1
-    - Case 2
-- Input
-- Output
-- Miscellaneous
- <!-- toc end -->
+```bash
+RESOURCE_GROUP_NAME=pricex
+STORAGE_ACCOUNT_NAME=pricex
+CONTAINER_NAME=products
+LOCATION=westeurope
+```
+
+2. Create the resource group:
+
+```bash
+az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
+```
+
+3. Create the storage account:
+
+```bash
+az storage account create --name $STORAGE_ACCOUNT_NAME --resource-group $RESOURCE_GROUP_NAME --location $LOCATION --sku Standard_LRS
+```
+
+4. Create the storage container:
+
+```bash
+az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME
+```
+
+5. Get the storage account connection string:
+
+```bash
+az storage account show-connection-string --name $STORAGE_ACCOUNT_NAME --resource-group $RESOURCE_GROUP_NAME --query connectionString --output tsv
+```
+
+6. Create the storage queue:
+
+```bash
+az storage queue create --name $STORAGE_ACCOUNT_NAME --account-name $STORAGE_ACCOUNT_NAME --connection-string $STORAGE_ACCOUNT_CONNECTION_STRING
+```
+
+7. Move the connection string to the .env file:
+
+```bash
+echo "STORAGE_ACCOUNT_CONNECTION_STRING=$STORAGE_ACCOUNT_CONNECTION_STRING" >> .env
+```
