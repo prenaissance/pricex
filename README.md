@@ -49,7 +49,7 @@ az storage account show-connection-string --name $STORAGE_ACCOUNT_NAME --resourc
 6. Create the storage queue:
 
 ```bash
-az storage queue create --name $STORAGE_ACCOUNT_NAME --account-name $STORAGE_ACCOUNT_NAME --connection-string $STORAGE_ACCOUNT_CONNECTION_STRING
+az storage queue create --name $STORAGE_ACCOUNT_NAME --account-name $STORAGE_ACCOUNT_NAME
 ```
 
 7. Move the connection string to the .env file:

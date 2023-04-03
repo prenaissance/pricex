@@ -1,6 +1,7 @@
 import { Dataset, JSDOMCrawler, RequestList, RequestQueue } from "crawlee";
 import ProductInfo from "@/data/schemas/product-info";
 import { getDecimalPrice, normalizeString } from "@/parsing/extractors";
+import { ProductCrawler } from "@/common/product-crawler";
 
 export const name = "xstore";
 export const baseUrl = "https://xstore.md/";
@@ -15,7 +16,7 @@ const dataset = await Dataset.open<ProductInfo>(name);
 const crawler = new JSDOMCrawler({
   requestList,
   requestQueue,
-  maxRequestsPerCrawl: 20,
+  maxRequestsPerCrawl: 10,
 });
 
 crawler.router.addHandler("home", async ({ enqueueLinks, log }) => {
@@ -74,4 +75,4 @@ crawler.router.addDefaultHandler(async ({ enqueueLinks, log, window }) => {
   }
 });
 
-export default crawler;
+export default new ProductCrawler({ crawler, dataset, name });

@@ -4,7 +4,10 @@
     "type": "module",
     "description": "",
     "dependencies": {
-        "crawlee": "^3.0.0"
+        "@azure/storage-blob": "^12.13.0",
+        "@azure/storage-queue": "^12.12.0",
+        "crawlee": "^3.0.0",
+        "dotenv": "^16.0.3"
     },
     "devDependencies": {
         "@apify/tsconfig": "^0.1.0",

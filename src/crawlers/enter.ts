@@ -1,9 +1,10 @@
 import { Dataset, JSDOMCrawler, RequestList, RequestQueue } from "crawlee";
 import ProductInfo from "@/data/schemas/product-info";
 import { getDecimalPrice, normalizeString } from "@/parsing/extractors";
+import { ProductCrawler } from "@/common/product-crawler";
 
-export const name = "enter";
-export const baseUrl = "https://enter.online";
+const name = "enter";
+const baseUrl = "https://enter.online";
 
 const requestList = await RequestList.open(name, [
   { url: baseUrl, label: "home" },
@@ -14,7 +15,7 @@ const dataset = await Dataset.open<ProductInfo>(name);
 const crawler = new JSDOMCrawler({
   requestList,
   requestQueue,
-  maxRequestsPerCrawl: 20,
+  maxRequestsPerCrawl: 10,
 });
 
 crawler.router.addHandler("home", async ({ enqueueLinks, log }) => {
@@ -83,4 +84,8 @@ crawler.router.addDefaultHandler(async ({ enqueueLinks, log, window }) => {
   }
 });
 
-export default crawler;
+export default new ProductCrawler({
+  name,
+  crawler,
+  dataset,
+});
