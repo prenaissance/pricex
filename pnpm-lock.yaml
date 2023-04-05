@@ -8,11 +8,14 @@ dependencies:
     specifier: ^12.12.0
     version: 12.12.0
   crawlee:
-    specifier: ^3.0.0
-    version: 3.3.0
+    specifier: ^3.3.0
+    version: 3.3.0(playwright@1.32.1)
   dotenv:
     specifier: ^16.0.3
     version: 16.0.3
+  playwright:
+    specifier: ^1.32.1
+    version: 1.32.1
 
 devDependencies:
   '@apify/tsconfig':
@@ -224,7 +227,7 @@ packages:
       type-fest: 3.7.1
     dev: false
 
-  /@crawlee/browser-pool@3.3.0:
+  /@crawlee/browser-pool@3.3.0(playwright@1.32.1):
     resolution: {integrity: sha512-HrSbZq+QSB1L9lpfYO67MyM2GLwNRgyy8loOGbTZcWD4WeAzvoveNTC2KCSvWmjLH5F6qt3g2OQrmPyTdMG3JA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -240,24 +243,25 @@ packages:
       '@apify/timeout': 0.3.0
       '@crawlee/types': 3.3.0
       fingerprint-generator: 2.1.17
-      fingerprint-injector: 2.1.17
+      fingerprint-injector: 2.1.17(playwright@1.32.1)
       lodash.merge: 4.6.2
       nanoid: 3.3.6
       ow: 0.28.2
       p-limit: 3.1.0
+      playwright: 1.32.1
       proxy-chain: 2.2.1
       quick-lru: 5.1.1
       tiny-typed-emitter: 2.1.0
       tslib: 2.5.0
     dev: false
 
-  /@crawlee/browser@3.3.0:
+  /@crawlee/browser@3.3.0(playwright@1.32.1):
     resolution: {integrity: sha512-awWo2/DHC6WFBrCskzernuPEXtpMh+G0xwxuI7BTJoNmNGM3Yq4nNtmCaiszWU6Ivt36nogglJNu5qmGINZIPA==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@apify/timeout': 0.3.0
       '@crawlee/basic': 3.3.0
-      '@crawlee/browser-pool': 3.3.0
+      '@crawlee/browser-pool': 3.3.0(playwright@1.32.1)
       '@crawlee/types': 3.3.0
       '@crawlee/utils': 3.3.0
       ow: 0.28.2
@@ -372,7 +376,7 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@crawlee/playwright@3.3.0:
+  /@crawlee/playwright@3.3.0(playwright@1.32.1):
     resolution: {integrity: sha512-P7DfgbEGy2K6k8lBOKUugWID0Uo7lV9qrfjcjLxlBwD0XQuFzaFlrPwSR7HF/7OamPSssu8XmtDqD/JPkP8lUg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -383,19 +387,20 @@ packages:
     dependencies:
       '@apify/datastructures': 2.0.0
       '@apify/log': 2.2.8
-      '@crawlee/browser': 3.3.0
-      '@crawlee/browser-pool': 3.3.0
+      '@crawlee/browser': 3.3.0(playwright@1.32.1)
+      '@crawlee/browser-pool': 3.3.0(playwright@1.32.1)
       '@crawlee/types': 3.3.0
       '@crawlee/utils': 3.3.0
       cheerio: 1.0.0-rc.12
       jquery: 3.6.4
       ow: 0.28.2
+      playwright: 1.32.1
       tslib: 2.5.0
     transitivePeerDependencies:
       - puppeteer
     dev: false
 
-  /@crawlee/puppeteer@3.3.0:
+  /@crawlee/puppeteer@3.3.0(playwright@1.32.1):
     resolution: {integrity: sha512-jxAAIb6ETEeZZb+W11SCwGKURt1Q4M8YiYPRI51sxX+4Sc7FZe8WUef374syZgRfFjL0y+LVB3UtAZ/wcn2N4g==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -406,8 +411,8 @@ packages:
     dependencies:
       '@apify/datastructures': 2.0.0
       '@apify/log': 2.2.8
-      '@crawlee/browser': 3.3.0
-      '@crawlee/browser-pool': 3.3.0
+      '@crawlee/browser': 3.3.0(playwright@1.32.1)
+      '@crawlee/browser-pool': 3.3.0(playwright@1.32.1)
       '@crawlee/types': 3.3.0
       '@crawlee/utils': 3.3.0
       cheerio: 1.0.0-rc.12
@@ -1370,7 +1375,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
-  /crawlee@3.3.0:
+  /crawlee@3.3.0(playwright@1.32.1):
     resolution: {integrity: sha512-1tT6nhigc6z8oYBl+PH5/jw2vlUckDfWBz6ae2Im5K9igp9Mob0LhJ9LZFNmkd8OVJ7lRK6cIwGmsk9UCxCPaA==}
     engines: {node: '>=16.0.0'}
     hasBin: true
@@ -1384,16 +1389,17 @@ packages:
         optional: true
     dependencies:
       '@crawlee/basic': 3.3.0
-      '@crawlee/browser': 3.3.0
+      '@crawlee/browser': 3.3.0(playwright@1.32.1)
       '@crawlee/cheerio': 3.3.0
       '@crawlee/cli': 3.3.0
       '@crawlee/core': 3.3.0
       '@crawlee/http': 3.3.0
       '@crawlee/jsdom': 3.3.0
-      '@crawlee/playwright': 3.3.0
-      '@crawlee/puppeteer': 3.3.0
+      '@crawlee/playwright': 3.3.0(playwright@1.32.1)
+      '@crawlee/puppeteer': 3.3.0(playwright@1.32.1)
       '@crawlee/utils': 3.3.0
       import-local: 3.1.0
+      playwright: 1.32.1
       tslib: 2.5.0
     transitivePeerDependencies:
       - bufferutil
@@ -2095,7 +2101,7 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /fingerprint-injector@2.1.17:
+  /fingerprint-injector@2.1.17(playwright@1.32.1):
     resolution: {integrity: sha512-wZz1bfnPKv/aLf1P1kn1nNo/p3sO9mVmMLm/gZ4jJjrP3za6giCV/d4l8Jq7y3Yw/fjAJ5X77MtHi6bzOxh3KA==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -2108,6 +2114,7 @@ packages:
         optional: true
     dependencies:
       fingerprint-generator: 2.1.17
+      playwright: 1.32.1
       tslib: 2.5.0
     dev: false
 
@@ -3237,6 +3244,21 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: false
+
+  /playwright-core@1.32.1:
+    resolution: {integrity: sha512-KZYUQC10mXD2Am1rGlidaalNGYk3LU1vZqqNk0gT4XPty1jOqgup8KDP8l2CUlqoNKhXM5IfGjWgW37xvGllBA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: false
+
+  /playwright@1.32.1:
+    resolution: {integrity: sha512-GnEizysWMvoqHC3I9l8+4/ZxeLwLNdJJG76xdKGxzOcIZDcw5RSk/FKrFb5CuA+zcLpjIM2p9eR9Z4CuUDkWXg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.32.1
     dev: false
 
   /pnpm@8.1.0:

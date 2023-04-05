@@ -1,21 +1,14 @@
 {
-    "extends": "@apify/tsconfig",
-    "compilerOptions": {
-        "module": "ES2022",
-        "target": "ES2022",
-        "outDir": "dist",
-        "noUnusedLocals": false,
-        "lib": [
-            "DOM"
-        ],
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        }
-    },
-    "include": [
-        "./src/**/*",
-        "env-typing.d.ts"
-    ]
+  "extends": "@apify/tsconfig",
+  "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022",
+    "outDir": "dist",
+    "noUnusedLocals": false,
+    "lib": ["DOM", "ESNext"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["./src/**/*", "env-typing.d.ts"]
 }

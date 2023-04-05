@@ -13,4 +13,7 @@ export const getDecimalPrice = (text: string) => {
 };
 
 export const normalizeString = (text: string) =>
-  text.trim().replace(/[\n\t]/g, "");
+  text
+    .trim()
+    .replace(/[\n\t]/g, "")
+    .replaceAll("&quot;", '"');
