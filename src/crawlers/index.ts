@@ -6,6 +6,7 @@ import maximum from "./maximum";
 import neocomputer from "./neocomputer";
 import pandashop from "./pandashop";
 import shopit from "./shopit";
+import uno from "./uno";
 import xstore from "./xstore";
 
 export const crawlers = [
@@ -17,5 +18,6 @@ export const crawlers = [
   neocomputer,
   pandashop,
   shopit,
+  uno,
   xstore,
 ];
