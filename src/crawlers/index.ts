@@ -2,6 +2,7 @@ import cosmo from "./cosmo";
 import darwin from "./darwin";
 import doxyterra from "./doxyterra";
 import enter from "./enter";
+import ht from "./ht";
 import maximum from "./maximum";
 import neocomputer from "./neocomputer";
 import pandashop from "./pandashop";
@@ -14,6 +15,7 @@ export const crawlers = [
   darwin,
   doxyterra,
   enter,
+  ht,
   maximum,
   neocomputer,
   pandashop,
