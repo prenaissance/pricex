@@ -15,6 +15,7 @@ const dataset = await Dataset.open<ProductInfo>(name);
 const crawler = new JSDOMCrawler({
   requestList,
   requestQueue,
+  maxRequestsPerCrawl: 50,
 });
 
 crawler.router.addHandler("home", async ({ enqueueLinks, log }) => {

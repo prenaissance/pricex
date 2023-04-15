@@ -7,25 +7,24 @@
       "command": "host start",
       "problemMatcher": "$func-node-watch",
       "isBackground": true,
-      "dependsOn": "npm build (functions)"
+      "dependsOn": "pnpm build (functions)"
     },
     {
       "type": "shell",
-      "label": "npm build (functions)",
-      "command": "npm run build",
-      "dependsOn": "npm install (functions)",
-      "problemMatcher": "$tsc"
+      "label": "pnpm build (functions)",
+      "command": "pnpm run build",
+      "dependsOn": "pnpm install (functions)"
     },
     {
       "type": "shell",
-      "label": "npm install (functions)",
-      "command": "npm install"
+      "label": "pnpm install (functions)",
+      "command": "pnpm install"
     },
     {
       "type": "shell",
-      "label": "npm prune (functions)",
-      "command": "npm prune --production",
-      "dependsOn": "npm build (functions)",
+      "label": "pnpm prune (functions)",
+      "command": "pnpm prune --production",
+      "dependsOn": "pnpm build (functions)",
       "problemMatcher": []
     }
   ]
